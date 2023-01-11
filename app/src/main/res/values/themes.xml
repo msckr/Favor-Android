@@ -13,4 +13,9 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="Theme.Favorandroid.Splash" parent="Theme.Favorandroid">
+        <item name="windowSplashScreenBackground" >@color/splashbackgraound</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash</item>
+        <item name="postSplashScreenTheme">@style/Theme.Favorandroid</item>
+    </style>
 </resources>
