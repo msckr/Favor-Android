@@ -9,14 +9,15 @@ import com.nise.favor_android.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)
-        //binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
 
         register_btn.setOnClickListener {
-            val intent = Intent(this,Register::class.java)
+            val intent = Intent(this,RegisterActivity::class.java)
             startActivity(intent)
         }
     }
