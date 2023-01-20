@@ -16,9 +16,10 @@
         android:layout_marginRight="155dp"
         android:fontFamily="@font/pretendard_bold"
         android:text="로그인"
-        android:textSize="18sp"
+        android:textColor="@color/textcolor"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
@@ -45,6 +46,7 @@
         android:layout_marginEnd="20dp"
         android:ems="10"
         android:hint="이메일"
+        android:textColorHint="@color/hintcolor"
         android:inputType="textEmailAddress"
         android:textSize="16px"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,6 +62,7 @@
         android:layout_marginEnd="20dp"
         android:ems="10"
         android:hint="비밀번호"
+        android:textColorHint="@color/hintcolor"
         android:inputType="textPassword"
         android:textSize="16px"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,12 +74,13 @@
         android:id="@+id/loginbtn"
         android:layout_width="335dp"
         android:layout_height="56dp"
-        android:layout_marginTop="314dp"
+        android:layout_marginTop="312dp"
         android:background="@drawable/button_round"
+        android:fontFamily="@font/pretendard_bold"
         android:text="시작하기"
+        android:textColor="@color/white"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -89,7 +93,7 @@
         android:background="@color/white"
         android:text="이메일 찾기"
         android:textSize="18px"
-        android:textColor="@color/logintext"
+        android:textColor="@color/hinttext"
         android:drawableRight="@drawable/nextbtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -105,6 +109,6 @@
         android:drawableRight="@drawable/nextbtn"
         android:text="비밀번호 찾기"
         android:textSize="18px"
-        android:textColor="@color/logintext"/>
+        android:textColor="@color/hinttext"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
