@@ -1,11 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Favorandroid" parent="Theme.AppCompat.DayNight.DarkActionBar">
+    <style name="Theme.Favorandroid" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/white</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
+        <item name="colorControlNormal">@color/white</item>
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
@@ -13,16 +14,9 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
 
-        <item name="windowSplashScreenBackground">@color/splashbackgraound</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/background_splash</item>
-        <item name="postSplashScreenTheme">@style/Theme.Favorandroid</item>
-        <!-- No title Bar-->
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-    <style name="Theme.Favorandroid.splash" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/splashbackgraound</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/background_splash</item>
-        <item name="postSplashScreenTheme">@style/Theme.Favorandroid</item>
-    </style>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:textColor">@color/textcolor</item>
+        <item name="android:fontFamily">@font/pretendard_bold</item>
+        </style>
+
 </resources>

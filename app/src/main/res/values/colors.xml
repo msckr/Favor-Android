@@ -13,5 +13,12 @@
     <color name="main">#FF5862</color>
     <color name="sub">#0C1338</color>
     <color name="error">#2DB399</color>
-    <color name="hintcolor">#9E9E9E</color>
+    <color name="detail">#9E9E9E</color>
+    <color name="background">#F5F5F5</color>
+    <color name="box1">#E0E0E0</color>
+    <color name="box2">#BDBDBD</color>
+
+
+
+
 </resources>

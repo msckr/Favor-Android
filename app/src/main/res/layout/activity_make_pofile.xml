@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:gravity="center_horizontal"
+    android:background="@color/white"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:gravity="center_horizontal"
+    tools:context=".MakePofileActivity"
+    tools:ignore="HardcodedText">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,7 +33,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/pretendard_bold"
             android:gravity="center"
-            android:text="로그인"
+            android:text="프로필 생성"
             android:textSize="18sp" />
 
         <ImageView
@@ -45,114 +46,97 @@
             app:tint="@color/textcolor" />
     </LinearLayout>
 
+    <FrameLayout
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="56dp">
+
+        <ImageView
+            android:id="@+id/img_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:src="@drawable/back_default_profile" />
+
+        <ImageView
+            android:id="@+id/img_profile_edit"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="right|bottom"
+            android:contentDescription="@null"
+            android:src="@drawable/back_default_add"
+            tools:ignore="RtlHardcoded" />
+    </FrameLayout>
+
     <EditText
-        android:id="@+id/edit_email"
+        android:id="@+id/edit_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="56dp"
         android:autofillHints="@null"
         android:background="@android:color/transparent"
-        android:hint="이메일"
-        android:inputType="textEmailAddress"
+        android:hint="이름"
+        android:inputType="text"
         android:paddingBottom="16dp"
+        android:singleLine="true"
         android:textColorHint="@color/detail"
         android:textSize="18sp" />
 
     <View
-        android:id="@+id/bar_email"
+        android:id="@+id/bar_name"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginHorizontal="20dp"
         android:background="@color/box1" />
 
     <EditText
-        android:id="@+id/edit_password"
+        android:id="@+id/edit_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="32dp"
         android:autofillHints="@null"
         android:background="@android:color/transparent"
-        android:hint="비밀번호"
-        android:inputType="textPassword"
+        android:hint="\@아이디"
+        android:inputType="text"
         android:paddingBottom="16dp"
+        android:singleLine="true"
         android:textColorHint="@color/detail"
         android:textSize="18sp" />
 
     <View
-        android:id="@+id/bar_password"
+        android:id="@+id/bar_id"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginHorizontal="20dp"
         android:background="@color/box1" />
 
     <TextView
-        android:id="@+id/btn_login"
+        android:id="@+id/txt_warning_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="8dp"
+        android:text="아이디를 입력해주세요."
+        android:textColor="@color/box2"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/btn_next"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginBottom="56dp"
         android:background="@drawable/back_button_light"
         android:fontFamily="@font/pretendard_bold"
         android:gravity="center"
-        android:onClick="onLoginClicked"
-        android:text="로그인"
+        android:onClick="onNextButtonClicked"
+        android:text="다음"
         android:textSize="18sp" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:id="@+id/btn_find_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onFindEmailClicked"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="이메일 찾기"
-                android:textColor="@color/detail"
-                android:textSize="14sp" />
-
-            <ImageView
-                android:layout_width="18dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="8dp"
-                android:contentDescription="@null"
-                android:scaleType="fitCenter"
-                android:src="@drawable/icon_chevron_right"
-                app:tint="@color/detail" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/btn_find_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:onClick="onFindPasswordClicked"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="비밀번호 찾기"
-                android:textColor="@color/detail"
-                android:textSize="14sp" />
-
-            <ImageView
-                android:layout_width="18dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="8dp"
-                android:contentDescription="@null"
-                android:scaleType="fitCenter"
-                android:src="@drawable/icon_chevron_right"
-                app:tint="@color/detail" />
-        </LinearLayout>
-    </LinearLayout>
 </LinearLayout>
