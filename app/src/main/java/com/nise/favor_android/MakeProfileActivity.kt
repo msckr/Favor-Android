@@ -5,14 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.core.widget.doAfterTextChanged
-import com.nise.favor_android.databinding.ActivityMakePofileBinding
+import com.nise.favor_android.databinding.ActivityMakeProfileBinding
+import kotlinx.android.synthetic.main.activity_register_term.*
 
-class MakePofileActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMakePofileBinding
+class MakeProfileActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMakeProfileBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMakePofileBinding.inflate(layoutInflater)
+        binding = ActivityMakeProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.editName.onFocusChangeListener = onFocusChangeListener
@@ -38,7 +39,10 @@ class MakePofileActivity : AppCompatActivity() {
     fun onHomeClicked(view: View) = onBackPressedDispatcher.onBackPressed()
 
     fun onNextButtonClicked(view: View) {
-        if (verify()) startActivity(Intent(applicationContext, RegisterTermActivity::class.java))
+        val intent = Intent(applicationContext,RegisterTermActivity::class.java)
+
+        if (verify()){
+            startActivity(intent)}
     }
 
     private fun verify(): Boolean =

@@ -1,13 +1,11 @@
 package com.nise.favor_android
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
-import android.util.Log
 import android.view.View
 import android.widget.CheckBox
 import android.widget.EditText
@@ -15,7 +13,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.widget.doAfterTextChanged
 import com.nise.favor_android.databinding.ActivityRegisterBinding
-import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
@@ -70,7 +67,7 @@ class RegisterActivity : AppCompatActivity() {
     fun onHomeClicked(view: View) = onBackPressedDispatcher.onBackPressed()
 
     fun onNextButtonClicked(view: View) {
-        if (verify()) startActivity(Intent(applicationContext, MakePofileActivity::class.java))
+        if (verify()) startActivity(Intent(applicationContext, MakeProfileActivity::class.java))
     }
 
     fun onClick(view: View) {

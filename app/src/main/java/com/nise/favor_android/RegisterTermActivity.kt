@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.CompoundButton
 import com.nise.favor_android.databinding.ActivityRegisterTermBinding
+import kotlinx.android.synthetic.main.activity_register_term.view.*
 
 class RegisterTermActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterTermBinding
@@ -13,7 +14,6 @@ class RegisterTermActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterTermBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.checkTerm1.setOnCheckedChangeListener(onCheckedChangedListener)
         binding.checkTerm2.setOnCheckedChangeListener(onCheckedChangedListener)
         binding.checkTerm3.setOnCheckedChangeListener(onCheckedChangedListener)
