@@ -1,12 +1,12 @@
-package com.nise.favor_android
+package com.nise.favor_android.Register
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.core.widget.doAfterTextChanged
+import com.nise.favor_android.R
 import com.nise.favor_android.databinding.ActivityMakeProfileBinding
-import kotlinx.android.synthetic.main.activity_register_term.*
 
 class MakeProfileActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMakeProfileBinding
@@ -39,7 +39,7 @@ class MakeProfileActivity : AppCompatActivity() {
     fun onHomeClicked(view: View) = onBackPressedDispatcher.onBackPressed()
 
     fun onNextButtonClicked(view: View) {
-        val intent = Intent(applicationContext,RegisterTermActivity::class.java)
+        val intent = Intent(applicationContext, RegisterTermActivity::class.java)
 
         if (verify()){
             startActivity(intent)}

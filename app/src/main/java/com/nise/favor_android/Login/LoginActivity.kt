@@ -1,9 +1,9 @@
-package com.nise.favor_android
+package com.nise.favor_android.Login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
+import com.nise.favor_android.R
 import com.nise.favor_android.databinding.ActivityLoginBinding
 
 @Suppress("UNUSED_PARAMETER")

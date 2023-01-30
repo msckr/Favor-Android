@@ -7,7 +7,7 @@
     android:background="@color/white"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context=".MakeProfileActivity"
+    tools:context=".Register.MakeProfileActivity"
     tools:ignore="HardcodedText">
 
     <LinearLayout

@@ -1,4 +1,4 @@
-package com.nise.favor_android
+package com.nise.favor_android.Register
 
 import android.content.Intent
 import android.graphics.Color
@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.widget.doAfterTextChanged
+import com.nise.favor_android.R
 import com.nise.favor_android.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
