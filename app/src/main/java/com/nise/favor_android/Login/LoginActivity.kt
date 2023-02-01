@@ -1,8 +1,10 @@
 package com.nise.favor_android.Login
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.nise.favor_android.Home.NavActivity
 import com.nise.favor_android.R
 import com.nise.favor_android.databinding.ActivityLoginBinding
 
@@ -18,8 +20,14 @@ class LoginActivity : AppCompatActivity() {
         binding.editPassword.onFocusChangeListener = onFocusChangeListener
     }
 
+
+
     fun onHomeClicked(view: View) = onBackPressedDispatcher.onBackPressed()
-    fun onLoginClicked(view: View) {}
+    fun onLoginClicked(view: View) {
+        when(view.id){
+            R.id.btn_login -> startActivity(Intent(this,NavActivity::class.java))
+        }
+    }
     fun onFindEmailClicked(view: View) {}
     fun onFindPasswordClicked(view: View) {}
 

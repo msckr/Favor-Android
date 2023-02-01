@@ -3,11 +3,17 @@ package com.nise.favor_android.Home
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.nise.favor_android.Home.databinding.ActivityNavBinding
+import com.nise.favor_android.Home.ui.HomeFragment
+import com.nise.favor_android.Home.ui.MypageFragment
+import com.nise.favor_android.Home.ui.ReminderFragment
+import com.nise.favor_android.R
+import com.nise.favor_android.databinding.ActivityNavBinding
+
 
 class NavActivity : AppCompatActivity() {
 
@@ -18,18 +24,22 @@ class NavActivity : AppCompatActivity() {
 
         binding = ActivityNavBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        replaceFragment(HomeFragment())
 
-        val navView: BottomNavigationView = binding.navView
+        binding.bottomview.setOnItemSelectedListener {
+            when(it.itemId){
+                R.id.home -> replaceFragment(HomeFragment())
+                R.id.reminder -> replaceFragment(ReminderFragment())
+                R.id.mypage -> replaceFragment(ReminderFragment())
+            }
+            true
+        }
+    }
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_nav)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+    private fun replaceFragment(fragment:Fragment){
+        val fragmentManager = supportFragmentManager
+        val fragmentTransacion = fragmentManager.beginTransaction()
+        fragmentTransacion.replace(R.id.fragment_frame,fragment)
+        fragmentTransacion.commit()
     }
 }
