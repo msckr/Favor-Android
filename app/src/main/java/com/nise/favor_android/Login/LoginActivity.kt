@@ -29,7 +29,11 @@ class LoginActivity : AppCompatActivity() {
         }
     }
     fun onFindEmailClicked(view: View) {}
-    fun onFindPasswordClicked(view: View) {}
+    fun onFindPasswordClicked(view: View) {
+        when(view.id){
+            R.id.btn_find_password -> startActivity(Intent(this,FindPasswordActivity::class.java))
+        }
+    }
 
     private val onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
         when (v.id) {

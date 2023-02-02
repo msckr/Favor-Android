@@ -24,9 +24,7 @@ class HomeFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,7 +35,6 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
         return root
     }
-
 
 
     override fun onDestroyView() {
