@@ -1,47 +1,42 @@
-package com.nise.favor_android.Register
+package com.nise.favor_android.Login
 
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.method.HideReturnsTransformationMethod
-import android.text.method.PasswordTransformationMethod
 import android.view.View
-import android.widget.CheckBox
 import android.widget.EditText
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.widget.doAfterTextChanged
 import com.nise.favor_android.R
-import com.nise.favor_android.databinding.ActivityRegisterBinding
+import com.nise.favor_android.Register.RegisterActivity
+import com.nise.favor_android.databinding.ActivityChangePasswordBinding
 
-class RegisterActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityRegisterBinding
-    private lateinit var groups: List<Group>
+class ChangePasswordActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityChangePasswordBinding
+    private lateinit var groups: List<RegisterActivity.Group>
 
-    internal data class Group(
+    private data class Group(
         var verified: Boolean, val edit: EditText, val bar: View, val txt: TextView,
     )
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityRegisterBinding.inflate(layoutInflater)
+        binding = ActivityChangePasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         with(binding) {
             groups = listOf(
-                Group(false, editEmail, barEmail, txtWarningEmail),
-                Group(false, editPassword, barPassword, txtWarningPassword),
-                Group(false, editPasswordConfirm, barPasswordConfirm, txtWarningPasswordConfirm)
+                RegisterActivity.Group(false, editPassword, barPassword, txtWarningPassword),
+                RegisterActivity.Group(
+                    false,
+                    editPasswordConfirm,
+                    barPasswordConfirm,
+                    txtWarningPasswordConfirm
+                )
             )
 
-            editEmail.onFocusChangeListener = onFocusChangeListener
             editPassword.onFocusChangeListener = onFocusChangeListener
             editPasswordConfirm.onFocusChangeListener = onFocusChangeListener
-
-            afterTextChanged(
-                groups[0], "실제 사용하는 이메일을 입력해주세요.", "사용 가능한 이메일입니다.", null
-            ) { it.matches(Regex("^[\\w.\\-]+@([\\w\\-]+\\.)+\\w{2,4}$")) }
 
             afterTextChanged(
                 groups[1], "영문, 숫자 혼용 8자 이상", "사용 가능한 비밀번호입니다.", null
@@ -56,31 +51,21 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+    fun onHomeClicked(view: View) = onBackPressedDispatcher.onBackPressed()
+    fun onRequestClick(view: View) {
+        when(view.id){
+            R.id.btn_login -> startActivity(Intent(this, LoginActivity::class.java))
+        }
+    }
     private val onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
         when (v.id) {
-            R.id.edit_email -> binding.barEmail
             R.id.edit_password -> binding.barPassword
             R.id.edit_password_confirm -> binding.barPasswordConfirm
             else -> null
         }!!.setBackgroundResource(if (hasFocus) R.color.textcolor else R.color.box1)
     }
 
-    fun onHomeClicked(view: View) = onBackPressedDispatcher.onBackPressed()
-
-    fun onNextButtonClicked(view: View) {
-        if (verify()) startActivity(Intent(applicationContext, MakeProfileActivity::class.java))
-    }
-
-    fun onClick(view: View) {
-        val isChecked = (view as CheckBox).isChecked
-        val edittext: EditText = (view.parent as LinearLayout).getChildAt(0) as EditText
-        edittext.transformationMethod =
-            if (isChecked) HideReturnsTransformationMethod.getInstance()
-            else PasswordTransformationMethod.getInstance()
-    }
-
     private fun verify(): Boolean = groups.map { it.verified }.reduce { acc, b -> acc && b }
-
     private fun btnActivation() {
         if (verify()) {
             binding.btnNext.setTextColor(getColor(R.color.white))
@@ -92,7 +77,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun afterTextChanged(
-        group: Group,
+        group: RegisterActivity.Group,
         msgDefault: String,
         msgSuccess: String,
         msgWarning: String?,
@@ -118,5 +103,4 @@ class RegisterActivity : AppCompatActivity() {
             btnActivation()
         }
     }
-
 }

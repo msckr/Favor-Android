@@ -17,6 +17,7 @@ import com.nise.favor_android.databinding.ActivityNavBinding
 
 class NavActivity : AppCompatActivity() {
 
+
     private lateinit var binding: ActivityNavBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

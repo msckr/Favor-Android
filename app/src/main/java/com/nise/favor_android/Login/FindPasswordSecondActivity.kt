@@ -4,16 +4,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.nise.favor_android.Home.NavActivity
 import com.nise.favor_android.R
-import com.nise.favor_android.databinding.ActivityFindPasswordBinding
-import java.util.zip.Inflater
+import com.nise.favor_android.databinding.ActivityFindPasswordSecondBinding
 
-class FindPasswordActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityFindPasswordBinding
+class FindPasswordSecondActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityFindPasswordSecondBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityFindPasswordBinding.inflate(layoutInflater)
+        binding = ActivityFindPasswordSecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.editEmail.onFocusChangeListener = onFocusChangeListener
     }
@@ -27,7 +26,7 @@ class FindPasswordActivity : AppCompatActivity() {
     }
     fun onRequestClick(view: View) {
         when(view.id){
-            R.id.btn_login -> startActivity(Intent(this, FindPasswordSecondActivity::class.java))
+            R.id.btn_login -> startActivity(Intent(this, ChangePasswordActivity::class.java))
         }
     }
 }
