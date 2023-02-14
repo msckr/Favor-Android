@@ -17,6 +17,15 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:textColor">@color/textcolor</item>
         <item name="android:fontFamily">@font/pretendard</item>
-        </style>
+    </style>
+
+    <style name="Theme.Favorandroid.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Favorandroid.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Favorandroid.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

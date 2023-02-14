@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Home.SearchActivity">
+    tools:context=".Home.Search.SearchActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,10 +23,10 @@
             android:scaleType="fitCenter"
             android:src="@drawable/icon_chevron_left"
             app:tint="@color/textcolor"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginStart="20dp"/>
 
         <androidx.appcompat.widget.SearchView
-            android:id="@+id/serch_view"
+            android:id="@+id/serch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="26dp"
@@ -38,56 +38,148 @@
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="651dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginLeft="20dp"
+        android:id="@+id/serch_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="21dp"
-            android:text="선물 카테고리"
-            android:fontFamily="@font/pretendard_bold"
-            android:textSize="18dp"/>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:layout_marginTop="16dp"
-            android:gravity="center_vertical">
-
+            android:layout_width="651dp"
+            android:layout_height="69dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical">
             <TextView
-                android:layout_width="87dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/background_box1"
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:text="선물 카테고리"
                 android:fontFamily="@font/pretendard_bold"
+                android:textSize="18dp"/>
 
-                android:gravity="center"
-                android:text="가벼운 선물"
-                android:textSize="12dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="87dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_box1"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:gravity="center"
+                    android:text="가벼운 선물"
+                    android:textSize="12dp" />
+                <TextView
+                    android:layout_width="53dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_box1"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:gravity="center"
+                    android:text="생일"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="63dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_box1"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:gravity="center"
+                    android:text="집들이"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="53dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_box1"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:gravity="center"
+                    android:text="시험"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="53dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_box1"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:gravity="center"
+                    android:text="승진"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="53dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/background_box1"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:gravity="center"
+                    android:text="졸업"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="53dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_box1"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:gravity="center"
+                    android:text="기타"
+                    android:textSize="12dp" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="372dp"
-        android:layout_height="77dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginLeft="20dp"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="21dp"
-            android:text="선물 기록"
-            android:fontFamily="@font/pretendard_bold"
-            android:textSize="18dp"/>
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:layout_marginTop="16dp"
-            android:gravity="center_vertical">
+            android:layout_width="372dp"
+            android:layout_height="77dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:text="선물 기록"
+                android:fontFamily="@font/pretendard_bold"
+                android:textSize="18dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical">
 
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/moved"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="34dp"
+                    android:src="@drawable/happy"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="34dp"
+                    android:src="@drawable/little_happy"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="34dp"
+                    android:src="@drawable/soso"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="34dp"
+                    android:src="@drawable/sad"/>
+
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
-
 </LinearLayout>

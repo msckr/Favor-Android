@@ -4,10 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.nise.favor_android.Home.NavActivity
 import com.nise.favor_android.R
 import com.nise.favor_android.databinding.ActivityFindPasswordBinding
-import java.util.zip.Inflater
 
 class FindPasswordActivity : AppCompatActivity() {
     private lateinit var binding : ActivityFindPasswordBinding

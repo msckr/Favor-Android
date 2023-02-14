@@ -26,7 +26,7 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
-        binding.
+
     }
     override fun onDestroyView() {
         super.onDestroyView()

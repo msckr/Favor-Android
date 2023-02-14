@@ -1,4 +1,4 @@
-package com.nise.favor_android.Home
+package com.nise.favor_android.Home.Search
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
