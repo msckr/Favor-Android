@@ -26,7 +26,7 @@ class FindPasswordSecondActivity : AppCompatActivity() {
     }
     fun onRequestClick(view: View) {
         when(view.id){
-            R.id.btn_login -> startActivity(Intent(this, ChangePasswordActivity::class.java))
+            R.id.btn_next -> startActivity(Intent(this, ChangePasswordActivity::class.java))
         }
     }
 }

@@ -44,7 +44,11 @@
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        app:tabTextAppearance="@style/searchtab">
+        app:tabTextAppearance="@style/searchtab"
+        app:tabIndicatorColor="@color/textcolor"
+        app:tabIndicatorHeight="3dp"
+        app:tabIndicatorGravity="bottom"
+        app:tabIndicatorFullWidth="false">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
