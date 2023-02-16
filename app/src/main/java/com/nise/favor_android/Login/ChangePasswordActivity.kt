@@ -9,12 +9,11 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.core.widget.doAfterTextChanged
 import com.nise.favor_android.R
-import com.nise.favor_android.Register.RegisterActivity
 import com.nise.favor_android.databinding.ActivityChangePasswordBinding
 
 class ChangePasswordActivity : AppCompatActivity() {
     private lateinit var binding : ActivityChangePasswordBinding
-    private lateinit var groups: List<RegisterActivity.Group>
+    private lateinit var groups: List<Group>
 
     private data class Group(
         var verified: Boolean, val edit: EditText, val bar: View, val txt: TextView,
@@ -26,8 +25,8 @@ class ChangePasswordActivity : AppCompatActivity() {
 
         with(binding) {
             groups = listOf(
-                RegisterActivity.Group(false, editPassword, barPassword, txtWarningPassword),
-                RegisterActivity.Group(
+                Group(false, editPassword, barPassword, txtWarningPassword),
+                Group(
                     false,
                     editPasswordConfirm,
                     barPasswordConfirm,
@@ -77,7 +76,7 @@ class ChangePasswordActivity : AppCompatActivity() {
     }
 
     private fun afterTextChanged(
-        group: RegisterActivity.Group,
+        group: Group,
         msgDefault: String,
         msgSuccess: String,
         msgWarning: String?,
