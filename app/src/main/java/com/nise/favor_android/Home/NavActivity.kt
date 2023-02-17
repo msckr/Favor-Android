@@ -1,6 +1,11 @@
 package com.nise.favor_android.Home
 
+import android.content.ContentValues.TAG
+import android.content.Intent
+import android.nfc.Tag
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -8,6 +13,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.nise.favor_android.Home.Search.SearchActivity
 import com.nise.favor_android.Home.ui.HomeFragment
 import com.nise.favor_android.Home.ui.MypageFragment
 import com.nise.favor_android.Home.ui.ReminderFragment

@@ -26,7 +26,7 @@
             android:layout_marginStart="20dp"/>
 
         <androidx.appcompat.widget.SearchView
-            android:id="@+id/serch"
+            android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="26dp"

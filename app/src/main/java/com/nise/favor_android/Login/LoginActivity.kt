@@ -29,7 +29,6 @@ class LoginActivity : AppCompatActivity() {
             R.id.btn_login -> startActivity(Intent(this,NavActivity::class.java))
         }
     }
-    fun onFindEmailClicked(view: View) {}
     fun onFindPasswordClicked(view: View) {
         when(view.id){
             R.id.btn_find_password -> startActivity(Intent(this,FindPasswordActivity::class.java))
