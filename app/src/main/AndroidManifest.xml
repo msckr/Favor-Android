@@ -33,6 +33,7 @@
         <activity
             android:name=".Home.Search.SearchActivity"
             android:exported="false">
+
         </activity>
         <activity
             android:name=".Login.ChangePasswordActivity"
