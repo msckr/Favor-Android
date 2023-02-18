@@ -3,6 +3,7 @@ package com.nise.favor_android.Home.Search
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.widget.SearchView
 import com.nise.favor_android.R
 import com.nise.favor_android.databinding.ActivitySearchBinding
@@ -18,13 +19,12 @@ class SearchActivity : AppCompatActivity() {
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-
                 return true
             }
             override fun onQueryTextChange(newText: String?): Boolean {
-
                 return true
             }
         })
     }
+    fun onHomeClicked(view:View) = onBackPressedDispatcher.onBackPressed()
 }
