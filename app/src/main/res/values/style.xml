@@ -7,4 +7,10 @@
         <item name="android:textSize">18dp</item>
         <item name="android:fontFamily">@font/pretendard_bold</item>
     </style>
+    <style name="gifttab" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/pretendard_bold</item>
+        <item name="singleLine">true</item>
+        <item name="maxLines">1</item>
+    </style>
 </resources>
