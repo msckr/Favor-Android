@@ -88,6 +88,7 @@
             </LinearLayout>
 
             <com.google.android.material.tabs.TabLayout
+                android:id="@+id/TimeLineTab"
                 android:layout_width="wrap_content"
                 android:layout_height="19dp"
                 android:layout_marginTop="16dp"
@@ -101,7 +102,6 @@
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:text="모두" />
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
@@ -112,13 +112,15 @@
                     android:layout_height="wrap_content"
                     android:text="준 선물"/>
             </com.google.android.material.tabs.TabLayout>
-            <androidx.viewpager.widget.ViewPager
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/TimeLinePage"
                 android:layout_width="371dp"
                 android:layout_height="559dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp">
-            </androidx.viewpager.widget.ViewPager>
+            </androidx.viewpager2.widget.ViewPager2>
         </LinearLayout>
 
     </ScrollView>

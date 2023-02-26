@@ -5,12 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.nise.favor_android.R
 import com.nise.favor_android.databinding.FragmentOnBoardBinding
 import com.nise.favor_android.onBoard.onBoarding.FirstFragment
 import com.nise.favor_android.onBoard.onBoarding.SecondFragment
 import com.nise.favor_android.onBoard.onBoarding.ThirdFragment
-import javax.xml.parsers.DocumentBuilderFactory.newInstance
 
 
 class onBoardFragment : Fragment() {
