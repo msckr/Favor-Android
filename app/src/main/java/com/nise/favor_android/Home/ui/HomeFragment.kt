@@ -45,7 +45,6 @@ class HomeFragment : Fragment() {
         })
 
         binding.TimeLinePage.adapter = TimelineAdapter(this)
-
         TabLayoutMediator(binding.TimeLineTab, binding.TimeLinePage) {tab, position ->
             when(position) {
                 0 -> tab.text = "모든 선물"
