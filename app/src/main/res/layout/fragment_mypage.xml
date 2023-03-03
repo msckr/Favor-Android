@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,16 +14,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            tools:ignore="UselessParent">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="19dp"
+                android:layout_marginStart="19dp"
                 android:fontFamily="@font/outfit_bold"
-                android:text="Favor"
+                android:text="@string/favor"
                 android:textColor="@color/white"
-                android:textSize="24dp" />
+                android:textSize="24sp" />
 
             <ImageView
                 android:id="@+id/editbtn"
@@ -33,7 +32,8 @@
                 android:layout_height="38dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="224dp"
-                android:src="@drawable/edit" />
+                android:src="@drawable/edit"
+                android:contentDescription="TODO" />
 
             <ImageView
                 android:id="@+id/settinghbtn"
@@ -42,100 +42,186 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="16dp"
                 android:onClick="onSearchClicked"
-                android:src="@drawable/settings" />
+                android:src="@drawable/settings"
+                android:contentDescription="TODO" />
         </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="303dp"
+            android:background="@drawable/white_radiuse"/>
     </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="475dp"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="61dp"
             android:layout_marginHorizontal="40dp"
             android:gravity="center_horizontal">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="26dp"
+                    android:fontFamily="@font/pretendard_bold"
                     android:text="2"
-                    android:textSize="22dp"
-                    android:fontFamily="@font/pretendard_bold"/>
+                    android:textSize="22dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="총 선물"
-                    android:textSize="16dp"
-                    android:layout_marginTop="16dp"/>
+                    android:textSize="16dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
+                android:layout_marginLeft="72dp"
                 android:gravity="center"
-                android:layout_marginLeft="72dp">
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="26dp"
+                    android:fontFamily="@font/pretendard_bold"
                     android:text="2"
-                    android:textSize="22dp"
-                    android:fontFamily="@font/pretendard_bold"/>
+                    android:textSize="22dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="받은 선물"
-                    android:textSize="16dp"
-                    android:layout_marginTop="16dp"/>
+                    android:textSize="16dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
+                android:layout_marginLeft="72dp"
                 android:gravity="center"
-                android:layout_marginLeft="72dp">
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="26dp"
+                    android:fontFamily="@font/pretendard_bold"
                     android:text="2"
-                    android:textSize="22dp"
-                    android:fontFamily="@font/pretendard_bold"/>
+                    android:textSize="22dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="준 선물"
-                    android:textSize="16dp"
-                    android:layout_marginTop="16dp"/>
+                    android:textSize="16dp" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="새 프로필"
                 android:fontFamily="@font/pretendard_bold"
-                android:textSize="20dp"/>
+                android:text="새 프로필"
+                android:textSize="20sp" />
+
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="508dp"
                 android:layout_height="262dp"
-                android:layout_marginTop="16dp">
-                <HorizontalScrollView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="250dp"
+                    android:layout_height="262dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/background">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginHorizontal="101dp"
+                        android:layout_marginTop="24dp"
+                        android:src="@drawable/icon_person_black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="107dp"
+                        android:layout_marginTop="88dp"
+                        android:fontFamily="@font/pretendard_bold"
+                        android:text="취향"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="120dp"
+                        android:fontFamily="@font/pretendard"
+                        android:gravity="center_horizontal"
+                        android:text="친구들이 회원님의 취향을 알 수 있도록
+                        5가지 키워드를 등록해보세요."
+                        android:textColor="@color/hinttext"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="74dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="206dp"
+                        android:background="@drawable/back_button_dark"
+                        android:text="바로가기" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="250dp"
+                    android:layout_height="262dp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@color/background" />
 
             </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_bold"
+                android:text="취향"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+            </LinearLayout>
+
+
         </LinearLayout>
     </LinearLayout>
 

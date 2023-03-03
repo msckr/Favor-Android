@@ -37,7 +37,7 @@ class NavActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.home -> replaceFragment(HomeFragment())
                 R.id.reminder -> replaceFragment(ReminderFragment())
-                R.id.mypage -> replaceFragment(ReminderFragment())
+                R.id.mypage -> replaceFragment(MypageFragment())
             }
             true
         }

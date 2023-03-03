@@ -26,10 +26,11 @@ class AllItem : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentAllItemBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
         var adapter = TimelineitemAdapter()
         binding.timelineImage.adapter = adapter
+        val root: View = binding.root
+
         return root
     }
 
