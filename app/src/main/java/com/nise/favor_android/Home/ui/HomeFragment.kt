@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.nise.favor_android.Home.Add.GiftRegisterActivity
 import com.nise.favor_android.Home.Search.SearchActivity
 import com.nise.favor_android.Home.ui.itemUI.AllItem
 import com.nise.favor_android.R
@@ -32,6 +33,9 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         binding.searchbtn.setOnClickListener {
             requireActivity().startActivity(Intent(activity, SearchActivity::class.java))
+        }
+        binding.addGiftbtn.setOnClickListener{
+            requireActivity().startActivity(Intent(activity,GiftRegisterActivity::class.java))
         }
         binding.TimeLineTab.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {

@@ -13,4 +13,10 @@
         <item name="singleLine">true</item>
         <item name="maxLines">1</item>
     </style>
+    <style name="giftregistertab" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">22dp</item>
+        <item name="android:fontFamily">@font/pretendard_bold</item>
+        <item name="singleLine">true</item>
+        <item name="maxLines">1</item>
+    </style>
 </resources>
