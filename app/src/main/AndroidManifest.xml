@@ -17,19 +17,13 @@
         android:theme="@style/Theme.Favorandroid"
         tools:targetApi="31">
         <activity
-            android:name=".GiftRegisterActivity"
+            android:name=".Home.Add.GiftRegisterActivity"
             android:exported="false"
             android:label="@string/title_activity_gift_register"
             android:theme="@style/Theme.Favorandroid.NoActionBar">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+
         </activity>
-        <activity
-            android:name=".Home.Search.SearchViewActivity"
-            android:exported="false"
-            android:label="@string/title_activity_search_view"
-            android:theme="@style/Theme.Favorandroid.NoActionBar" />
+
         <activity
             android:name=".Home.Search.EmotionSearchActivity"
             android:exported="false" />
