@@ -296,6 +296,7 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -316,8 +317,8 @@
             android:layout_height="38dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="224dp"
-            android:src="@drawable/edit"
-            android:contentDescription="TODO" />
+            android:contentDescription="TODO"
+            android:src="@drawable/edit" />
 
         <ImageView
             android:id="@+id/settinghbtn"
@@ -325,8 +326,8 @@
             android:layout_height="38dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="16dp"
+            android:contentDescription="TODO"
             android:onClick="onSearchClicked"
-            android:src="@drawable/settings"
-            android:contentDescription="TODO" />
+            android:src="@drawable/settings" />
     </LinearLayout>
 </RelativeLayout>

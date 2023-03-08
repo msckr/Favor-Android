@@ -42,4 +42,17 @@ class LoginActivity : AppCompatActivity() {
             else -> null
         }!!.setBackgroundResource(if (hasFocus) R.color.textcolor else R.color.box1)
     }
+
+    private fun verify(): Boolean =
+        binding.editEmail.text.isNotBlank() && binding.editPassword.text.isNotBlank()
+
+    private fun btnActivation() {
+        if (verify()) {
+            binding.btnLogin.setTextColor(getColor(R.color.white))
+            binding.btnLogin.setBackgroundResource(R.drawable.back_maincolor)
+        } else {
+            binding.btnLogin.setTextColor(getColor(R.color.textcolor))
+            binding.btnLogin.setBackgroundResource(R.drawable.back_button_light)
+        }
+    }
 }
