@@ -18,7 +18,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.editEmail.onFocusChangeListener = onFocusChangeListener
         binding.editPassword.onFocusChangeListener = onFocusChangeListener
-
+        btnActivation()
     }
 
 

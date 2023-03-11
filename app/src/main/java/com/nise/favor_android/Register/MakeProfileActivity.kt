@@ -40,8 +40,8 @@ class MakeProfileActivity : AppCompatActivity() {
 
     fun onNextButtonClicked(view: View) {
         val intent = Intent(applicationContext, RegisterTermActivity::class.java)
-
         if (verify()){
+            intent.putExtra("name",binding.editName.text.toString())
             startActivity(intent)}
     }
 
