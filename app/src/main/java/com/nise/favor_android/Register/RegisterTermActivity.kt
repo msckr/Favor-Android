@@ -51,7 +51,7 @@ class RegisterTermActivity : AppCompatActivity() {
     private fun btnActivation() {
         if (verify()) {
             binding.btnNext.setTextColor(getColor(R.color.white))
-            binding.btnNext.setBackgroundResource(R.drawable.back_button_dark)
+            binding.btnNext.setBackgroundResource(R.drawable.back_maincolor)
         } else {
             binding.btnNext.setTextColor(getColor(R.color.textcolor))
             binding.btnNext.setBackgroundResource(R.drawable.back_button_light)
