@@ -1,16 +1,11 @@
 package com.nise.favor_android.Login
 
-import okhttp3.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.Call
+import retrofit2.http.*
 
 interface LoginService {
 
-    @FormUrlEncoded
+
     @POST("/users/sign-up")
-    fun requestLogin(
-        @Field("email") email:String,
-        @Field("password") password:String
-    ) : Call<LoginDTO>
+    fun requestLogin(@Body Login : LoginRequest) : Call<LoginRequest>
 }

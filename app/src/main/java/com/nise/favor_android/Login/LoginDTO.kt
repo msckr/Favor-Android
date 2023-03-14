@@ -1,6 +1,10 @@
 package com.nise.favor_android.Login
 
-data class LoginDTO (
+import com.google.gson.annotations.SerializedName
+
+data class LoginRequest (
+    @SerializedName("email")
     val email : String,
+    @SerializedName("password")
     val password : String
 )
