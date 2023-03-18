@@ -5,7 +5,10 @@ import retrofit2.http.*
 
 interface LoginService {
 
-
+    @FormUrlEncoded
     @POST("/users/sign-up")
-    fun requestLogin(@Body Login : LoginRequest) : Call<LoginRequest>
+    fun requestLogin(
+        @Field("email") email : String,
+        @Field("password") password : String
+    ) : Call<LoginRequest>
 }

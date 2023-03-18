@@ -7,13 +7,18 @@ import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.View
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.core.widget.doAfterTextChanged
+import com.nise.favor_android.Login.LoginRequest
+import com.nise.favor_android.Login.LoginService
+import com.nise.favor_android.Login.Retrofit.service
 import com.nise.favor_android.R
 import com.nise.favor_android.databinding.ActivityRegisterBinding
+import kotlinx.android.synthetic.main.activity_register.*
+import retrofit2.*
+import retrofit2.converter.gson.GsonConverterFactory
+import java.util.Objects
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
@@ -54,6 +59,31 @@ class RegisterActivity : AppCompatActivity() {
                 groups[2], "비밀번호를 한 번 더 입력해주세요.", "", "비밀번호가 일치하지 않습니다."
             ) { editPassword.text.length >= 8 && it == groups[1].edit.text.toString() }
         }
+
+        var retrofit = Retrofit.Builder()
+            .baseUrl("https://favor.inuappcenter.kr/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        var loginService = retrofit.create(LoginService::class.java)
+        binding.btnNext.setOnClickListener {
+            if(verify()){
+                var userEmail = edit_email.text.toString()
+                var userPassword = edit_password.text.toString()
+                loginService.requestLogin(userEmail,userPassword).enqueue(object : Callback<LoginRequest>{
+                    override fun onResponse(call: Call<LoginRequest>, response: Response<LoginRequest>
+                    ) {
+                        Toast.makeText(this@RegisterActivity,"성공",Toast.LENGTH_SHORT).show()
+                    }
+                    override fun onFailure(call: Call<LoginRequest>, t: Throwable) {
+                        Toast.makeText(this@RegisterActivity, "실패", Toast.LENGTH_SHORT).show()
+                    }
+                })
+                startActivity(Intent(applicationContext, MakeProfileActivity::class.java))
+            }
+        }
+
+
     }
 
     private val onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
@@ -67,9 +97,6 @@ class RegisterActivity : AppCompatActivity() {
 
     fun onHomeClicked(view: View) = onBackPressedDispatcher.onBackPressed()
 
-    fun onNextButtonClicked(view: View) {
-        if (verify()) startActivity(Intent(applicationContext, MakeProfileActivity::class.java))
-    }
 
     fun onClick(view: View) {
         val isChecked = (view as CheckBox).isChecked
