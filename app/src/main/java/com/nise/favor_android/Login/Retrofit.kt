@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 
 object Retrofit {
-    private const val BaseUrl = "https://favor.inuappcenter.kr/swagger-ui.html#/"
+    private const val BaseUrl = "https://favor.inuappcenter.kr"
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(BaseUrl)

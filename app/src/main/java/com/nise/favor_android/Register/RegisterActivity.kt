@@ -60,17 +60,13 @@ class RegisterActivity : AppCompatActivity() {
             ) { editPassword.text.length >= 8 && it == groups[1].edit.text.toString() }
         }
 
-        var retrofit = Retrofit.Builder()
-            .baseUrl("https://favor.inuappcenter.kr/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+        val loginService = com.nise.favor_android.Login.Retrofit
 
-        var loginService = retrofit.create(LoginService::class.java)
         binding.btnNext.setOnClickListener {
             if(verify()){
                 var userEmail = edit_email.text.toString()
                 var userPassword = edit_password.text.toString()
-                loginService.requestLogin(userEmail,userPassword).enqueue(object : Callback<LoginRequest>{
+                loginService.service.requestLogin(userEmail,userPassword).enqueue(object : Callback<LoginRequest>{
                     override fun onResponse(call: Call<LoginRequest>, response: Response<LoginRequest>
                     ) {
                         Toast.makeText(this@RegisterActivity,"성공",Toast.LENGTH_SHORT).show()

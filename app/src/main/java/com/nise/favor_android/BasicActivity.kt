@@ -17,7 +17,7 @@ class BasicActivity : AppCompatActivity() {
         when (view.id) {
             R.id.btn_login -> startActivity(Intent(this, LoginActivity::class.java))
             R.id.btn_register -> {
-                startActivaity(Intent(this, RegisterActivity::class.java))
+                startActivity(Intent(this, RegisterActivity::class.java))
                 Log.d("test log","서버 연동 안됨")
             }
         }

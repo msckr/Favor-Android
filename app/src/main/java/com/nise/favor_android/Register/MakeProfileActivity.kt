@@ -5,8 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.core.widget.doAfterTextChanged
+import com.nise.favor_android.Login.ChangeProfile
+import com.nise.favor_android.Login.Retrofit
 import com.nise.favor_android.R
 import com.nise.favor_android.databinding.ActivityMakeProfileBinding
+import kotlinx.android.synthetic.main.activity_make_profile.*
+import kotlinx.android.synthetic.main.activity_register.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MakeProfileActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMakeProfileBinding
@@ -41,6 +48,16 @@ class MakeProfileActivity : AppCompatActivity() {
     fun onNextButtonClicked(view: View) {
         val intent = Intent(applicationContext, RegisterTermActivity::class.java)
         if (verify()){
+            val changeProfile = Retrofit
+            var userId = binding.editId.text.toString()
+            var userName = binding.editName.text.toString()
+            changeProfile.service.changeProfile(userId,userName).enqueue(object : Callback<ChangeProfile>{
+                override fun onResponse(call: Call<ChangeProfile>, response: Response<ChangeProfile>
+                ) {
+                }
+                override fun onFailure(call: Call<ChangeProfile>, t: Throwable) {
+                }
+            })
             intent.putExtra("name",binding.editName.text.toString())
             startActivity(intent)}
     }
