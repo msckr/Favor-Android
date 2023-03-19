@@ -8,17 +8,12 @@ import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.*
-import androidx.appcompat.app.AlertDialog
 import androidx.core.widget.doAfterTextChanged
 import com.nise.favor_android.Login.LoginRequest
-import com.nise.favor_android.Login.LoginService
-import com.nise.favor_android.Login.Retrofit.service
 import com.nise.favor_android.R
 import com.nise.favor_android.databinding.ActivityRegisterBinding
 import kotlinx.android.synthetic.main.activity_register.*
 import retrofit2.*
-import retrofit2.converter.gson.GsonConverterFactory
-import java.util.Objects
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
@@ -66,7 +61,7 @@ class RegisterActivity : AppCompatActivity() {
             if(verify()){
                 var userEmail = edit_email.text.toString()
                 var userPassword = edit_password.text.toString()
-                loginService.service.requestLogin(userEmail,userPassword).enqueue(object : Callback<LoginRequest>{
+                loginService.service.requestLogin().enqueue(object : Callback<LoginRequest>{
                     override fun onResponse(call: Call<LoginRequest>, response: Response<LoginRequest>
                     ) {
                         Toast.makeText(this@RegisterActivity,"성공",Toast.LENGTH_SHORT).show()
