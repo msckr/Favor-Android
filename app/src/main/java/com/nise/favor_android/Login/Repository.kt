@@ -17,11 +17,12 @@ class Repository {
             }
 
             override fun onFailure(call: Call<String>, t: Throwable) {
-                TODO("Not yet implemented")
             }
 
         })
     }
+
+    
 
 
 }

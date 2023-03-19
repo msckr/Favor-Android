@@ -55,21 +55,10 @@ class RegisterActivity : AppCompatActivity() {
             ) { editPassword.text.length >= 8 && it == groups[1].edit.text.toString() }
         }
 
-        val loginService = com.nise.favor_android.Login.Retrofit
 
         binding.btnNext.setOnClickListener {
             if(verify()){
-                var userEmail = edit_email.text.toString()
-                var userPassword = edit_password.text.toString()
-                loginService.service.requestLogin().enqueue(object : Callback<LoginRequest>{
-                    override fun onResponse(call: Call<LoginRequest>, response: Response<LoginRequest>
-                    ) {
-                        Toast.makeText(this@RegisterActivity,"성공",Toast.LENGTH_SHORT).show()
-                    }
-                    override fun onFailure(call: Call<LoginRequest>, t: Throwable) {
-                        Toast.makeText(this@RegisterActivity, "실패", Toast.LENGTH_SHORT).show()
-                    }
-                })
+                RegisterForm().postRegisterForm(binding.editEmail.text.toString(),binding.editPassword.text.toString())
                 startActivity(Intent(applicationContext, MakeProfileActivity::class.java))
             }
         }
