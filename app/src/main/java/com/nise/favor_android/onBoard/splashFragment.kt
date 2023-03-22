@@ -29,8 +29,6 @@ class splashFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        //1
         Handler(Looper.getMainLooper()).postDelayed({
             if (isOnBoardingFinished()) {
                 findNavController().navigate(R.id.action_splashFragment_to_basicActivity)

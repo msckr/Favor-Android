@@ -25,7 +25,6 @@ class onBoardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //1
         setupViewPager()
     }
 
