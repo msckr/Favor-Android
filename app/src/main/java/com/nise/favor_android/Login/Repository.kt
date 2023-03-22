@@ -1,11 +1,12 @@
-package com.nise.favor_android.Login
+import com.nise.favor_android.Login.LoginRequest
 
 import android.util.Log
+import com.nise.favor_android.Login.Retrofit
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Repository {
+class Repository() {
     private val Dr = Retrofit
 
     fun postRegisterForm(loginRequest: LoginRequest){
@@ -15,10 +16,8 @@ class Repository {
             override fun onResponse(call: Call<String>, response: Response<String>) {
                 Log.i("post_success",response.body().toString())
             }
-
             override fun onFailure(call: Call<String>, t: Throwable) {
             }
-
         })
     }
 

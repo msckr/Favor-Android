@@ -43,6 +43,12 @@ class NavActivity : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        finishAffinity()
+        System.exit(0)
+    }
+
+
     private fun replaceFragment(fragment:Fragment){
         val fragmentManager = supportFragmentManager
         val fragmentTransacion = fragmentManager.beginTransaction()

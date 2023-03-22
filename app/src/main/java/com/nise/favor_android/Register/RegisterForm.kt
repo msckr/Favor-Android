@@ -1,7 +1,7 @@
 package com.nise.favor_android.Register
 
+import Repository
 import com.nise.favor_android.Login.LoginRequest
-import com.nise.favor_android.Login.Repository
 
 class RegisterForm {
     val repo = Repository()
