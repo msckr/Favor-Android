@@ -1,16 +1,18 @@
 package com.nise.favor_android.Register
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.View
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.widget.doAfterTextChanged
 import com.nise.favor_android.Login.ChangeProfile
 import com.nise.favor_android.Login.Retrofit
 import com.nise.favor_android.R
 import com.nise.favor_android.databinding.ActivityMakeProfileBinding
-import kotlinx.android.synthetic.main.activity_make_profile.*
-import kotlinx.android.synthetic.main.activity_register.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -33,8 +35,21 @@ class MakeProfileActivity : AppCompatActivity() {
             if (it.toString() == "@") it.clear()
             else if (!it.startsWith("@")) it.insert(0, "@")
         }
+        binding.imgProfileEdit.setOnClickListener{
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            activityResult.launch(intent)
+        }
     }
-
+    private val activityResult : ActivityResultLauncher<Intent> = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()){
+        if(it.resultCode == RESULT_OK && it.data!=null){
+            val uri = it.data!!.data
+            Glide.with(this)
+                .load(uri)
+                .into(binding.imgProfile)
+        }
+    }
     private val onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
         when (v.id) {
             R.id.edit_name -> binding.barName
@@ -74,4 +89,22 @@ class MakeProfileActivity : AppCompatActivity() {
             binding.btnNext.setBackgroundResource(R.drawable.back_button_light)
         }
     }
+
+    //camera
+    private val SELECT_IMAGE_REQUEST_CODE = 100
+
+    private fun selectImageFromGallery() {
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        intent.type = "image/*"
+        startActivityForResult(intent, SELECT_IMAGE_REQUEST_CODE)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == SELECT_IMAGE_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+            val selectedImageUri: Uri? = data.data
+            // 선택한 이미지 사용
+        }
+    }
+
 }

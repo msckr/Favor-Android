@@ -58,14 +58,14 @@
             android:contentDescription="@null"
             android:src="@drawable/back_default_profile" />
 
-        <ImageView
+        <Button
             android:id="@+id/img_profile_edit"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="right|bottom"
             android:contentDescription="@null"
-            android:src="@drawable/back_default_add"
-            tools:ignore="RtlHardcoded" />
+            android:background="@drawable/back_default_add"
+             />
     </FrameLayout>
 
     <EditText
