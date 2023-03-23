@@ -60,7 +60,6 @@ class RegisterActivity : AppCompatActivity() {
         binding.btnNext.setOnClickListener {
             if(verify()){
                 RegisterForm().postRegisterForm(binding.editEmail.text.toString(),binding.editPassword.text.toString())
-
                 startActivity(Intent(applicationContext, MakeProfileActivity::class.java))
             }
         }
