@@ -6,7 +6,7 @@ data class LoginRequest (
     val password : String
 )
 
-data class ChangeProfile(
+data class ProfileMake(
     val userId : String,
     val name : String
 )

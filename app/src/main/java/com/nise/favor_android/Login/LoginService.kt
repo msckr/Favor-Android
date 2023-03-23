@@ -8,12 +8,12 @@ interface LoginService {
     @POST("/swagger-ui.html#/users/sign-up")
     fun requestLogin(
         @Body loginRequest: LoginRequest
-    ) : Call<String>
+    ) : Call<UserDTO>
 
-    @FormUrlEncoded
-    @PATCH("/users/profile")
-    fun changeProfile(
-        @Field("userId") userId : String,
-        @Field("name") name : String
-    ): Call<ChangeProfile>
+
+    @PATCH("/swagger-ui.html#/users/profile")
+    fun makeProfile(
+        @Body profileMake: ProfileMake,
+        @Query("userNo") userNo : Int
+    ): Call<UserDTO>
 }

@@ -19,6 +19,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var groups: List<Group>
 
+
     internal data class Group(
         var verified: Boolean, val edit: EditText, val bar: View, val txt: TextView,
     )
@@ -59,6 +60,7 @@ class RegisterActivity : AppCompatActivity() {
         binding.btnNext.setOnClickListener {
             if(verify()){
                 RegisterForm().postRegisterForm(binding.editEmail.text.toString(),binding.editPassword.text.toString())
+
                 startActivity(Intent(applicationContext, MakeProfileActivity::class.java))
             }
         }
