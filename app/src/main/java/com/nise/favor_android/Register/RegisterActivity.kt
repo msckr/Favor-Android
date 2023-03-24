@@ -10,13 +10,13 @@ import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.*
 import androidx.core.widget.doAfterTextChanged
-import com.nise.favor_android.Login.Retrofit
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
+import com.nise.favor_android.Login.LoginRequest
 import com.nise.favor_android.Login.meuser
 import com.nise.favor_android.R
 import com.nise.favor_android.databinding.ActivityRegisterBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
@@ -30,6 +30,7 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         var viewmodel = RegisterForm()
+        var repo = Repository()
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -60,19 +61,25 @@ class RegisterActivity : AppCompatActivity() {
             ) { editPassword.text.length >= 8 && it == groups[1].edit.text.toString() }
         }
 
-
         binding.btnNext.setOnClickListener {
             if(verify()){
-                var email = binding.editEmail.text.toString()
-                var password = binding.editPassword.text.toString()
-                viewmodel.postRegisterForm(email, password)
-                startActivity(Intent(applicationContext, MakeProfileActivity::class.java))
+                val loginRequest = LoginRequest(
+                    binding.editEmail.text.toString().trim(),
+                    binding.editPassword.text.toString().trim()
+                )
+                repo.postRegisterForm(loginRequest,object : Repository.GetDataCallBack<meuser>{
+                    override fun onSuccess(data: meuser?) {
+                        val userNo = data?.data!!.userNo
+                        intent.putExtra("userNo",userNo)
+                        startActivity(Intent(applicationContext, MakeProfileActivity::class.java))
+                        finish()
+                    }
+                    override fun onFailure(){
+                    }
+                })
             }
         }
-
-
     }
-
     private val onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
         when (v.id) {
             R.id.edit_email -> binding.barEmail
@@ -134,3 +141,4 @@ class RegisterActivity : AppCompatActivity() {
     }
 
 }
+
