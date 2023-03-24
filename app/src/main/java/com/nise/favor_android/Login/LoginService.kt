@@ -10,7 +10,7 @@ interface LoginService {
         @Body loginRequest: LoginRequest
     ) : Call<meuser>
 
-
+    @FormUrlEncoded
     @PATCH("/users/profile")
     fun makeProfile(
         @Body profileMake: ProfileMake,

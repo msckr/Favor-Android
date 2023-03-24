@@ -1,5 +1,6 @@
 package com.nise.favor_android.Register
 
+import Repository
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -9,11 +10,13 @@ import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.*
 import androidx.core.widget.doAfterTextChanged
-import com.nise.favor_android.Login.LoginRequest
+import com.nise.favor_android.Login.Retrofit
+import com.nise.favor_android.Login.meuser
 import com.nise.favor_android.R
 import com.nise.favor_android.databinding.ActivityRegisterBinding
-import kotlinx.android.synthetic.main.activity_register.*
-import retrofit2.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
@@ -26,6 +29,7 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        var viewmodel = RegisterForm()
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -59,7 +63,9 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.btnNext.setOnClickListener {
             if(verify()){
-                RegisterForm().postRegisterForm(binding.editEmail.text.toString(),binding.editPassword.text.toString())
+                var email = binding.editEmail.text.toString()
+                var password = binding.editPassword.text.toString()
+                viewmodel.postRegisterForm(email, password)
                 startActivity(Intent(applicationContext, MakeProfileActivity::class.java))
             }
         }

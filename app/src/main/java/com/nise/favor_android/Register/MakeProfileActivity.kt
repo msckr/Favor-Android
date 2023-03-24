@@ -19,7 +19,7 @@ class MakeProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMakeProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        val userNo = intent.getIntExtra("userNo",1)
         binding.editName.onFocusChangeListener = onFocusChangeListener
         binding.editId.onFocusChangeListener = onFocusChangeListener
 
@@ -37,7 +37,7 @@ class MakeProfileActivity : AppCompatActivity() {
         }
         binding.btnNext.setOnClickListener{
             if(verify()){
-                MakeProfileForm().patchMakeProfile(binding.editId.text.toString(),binding.editName.text.toString())
+                MakeProfileForm().patchMakeProfile(binding.editId.text.toString(),binding.editName.text.toString(),userNo)
                 startActivity(Intent(applicationContext,RegisterTermActivity::class.java))
             }
         }
