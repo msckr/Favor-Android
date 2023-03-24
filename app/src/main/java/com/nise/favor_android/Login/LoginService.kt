@@ -5,15 +5,15 @@ import retrofit2.http.*
 
 interface LoginService {
 
-    @POST("/swagger-ui.html#/users/sign-up")
+    @POST("/users/sign-up")
     fun requestLogin(
         @Body loginRequest: LoginRequest
-    ) : Call<UserDTO>
+    ) : Call<meuser>
 
 
-    @PATCH("/swagger-ui.html#/users/profile")
+    @PATCH("/users/profile")
     fun makeProfile(
         @Body profileMake: ProfileMake,
         @Query("userNo") userNo : Int
-    ): Call<UserDTO>
+    ): Call<meuser>
 }

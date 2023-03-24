@@ -10,25 +10,23 @@ class Repository() {
 
     fun postRegisterForm(loginRequest: LoginRequest){
         val call = Dr.service.requestLogin(loginRequest)
-        call.enqueue(object : Callback<UserDTO>{
-            override fun onResponse(call: Call<UserDTO>, response: Response<UserDTO>) {
-
+        call.enqueue(object : Callback<meuser>{
+            override fun onResponse(call: Call<meuser>, response: Response<meuser>) {
+                Log.d("log",response.toString())
             }
-            override fun onFailure(call: Call<UserDTO>, t: Throwable) {
+            override fun onFailure(call: Call<meuser>, t: Throwable) {
             }
         })
     }
 
     fun makeProfileForm(profileMake: ProfileMake,userNo : Int){
         val call = Dr.service.makeProfile(profileMake, userNo)
-        call.enqueue(object :Callback<UserDTO>{
-            override fun onResponse(call: Call<UserDTO>, response: Response<UserDTO>) {
+        call.enqueue(object :Callback<meuser>{
+            override fun onResponse(call: Call<meuser>, response: Response<meuser>) {
             }
-            override fun onFailure(call: Call<UserDTO>, t: Throwable) {
+            override fun onFailure(call: Call<meuser>, t: Throwable) {
             }
-
         })
-
-
     }
+
 }

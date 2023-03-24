@@ -37,7 +37,8 @@ class MakeProfileActivity : AppCompatActivity() {
         }
         binding.btnNext.setOnClickListener{
             if(verify()){
-
+                MakeProfileForm().patchMakeProfile(binding.editId.text.toString(),binding.editName.text.toString())
+                startActivity(Intent(applicationContext,RegisterTermActivity::class.java))
             }
         }
     }
