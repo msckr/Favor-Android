@@ -10,6 +10,5 @@ class MakeProfileForm {
             userId = userId,
             name = name
         )
-        repo.makeProfileForm(makeProfileForm, userNo)
     }
 }

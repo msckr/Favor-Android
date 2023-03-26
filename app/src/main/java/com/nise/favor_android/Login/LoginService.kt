@@ -5,14 +5,15 @@ import retrofit2.http.*
 
 interface LoginService {
 
-    @POST("/users/sign-up")
+    @POST("users/sign-up")
     fun requestLogin(
         @Body loginRequest: LoginRequest
     ) : Call<meuser>
 
-    @PATCH("/users/profile")
+    @Headers("Content-Type: application/json")
+    @PATCH("users/profile")
     fun makeProfile(
         @Body profileMake: ProfileMake,
-        @Query("userNo") userNo : Int
+        @Query("userNo") value : Int
     ): Call<meuser>
 }

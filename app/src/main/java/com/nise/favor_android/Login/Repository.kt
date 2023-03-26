@@ -18,12 +18,13 @@ class Repository() {
         })
     }
 
-    fun makeProfileForm(profileMake: ProfileMake,userNo: Int){
+    fun makeProfileForm(profileMake: ProfileMake,userNo: Int, param : GetDataCallBack<meuser>){
 
         val call = Dr.service.makeProfile(profileMake, userNo)
         call.enqueue(object :Callback<meuser>{
             override fun onResponse(call: Call<meuser>, response: Response<meuser>) {
                 Log.d("log",response.body().toString())
+                param.onSuccess(response.body())
             }
             override fun onFailure(call: Call<meuser>, t: Throwable) {
             }

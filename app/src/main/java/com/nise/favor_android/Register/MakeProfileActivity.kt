@@ -4,12 +4,15 @@ import Repository
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract.Profile
 import android.util.Log
 import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.widget.doAfterTextChanged
 import com.bumptech.glide.Glide
+import com.nise.favor_android.Login.ProfileMake
+import com.nise.favor_android.Login.meuser
 import com.nise.favor_android.R
 import com.nise.favor_android.databinding.ActivityMakeProfileBinding
 
@@ -20,7 +23,8 @@ class MakeProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMakeProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val userNo = intent.getIntExtra("userNo",0)
+
+        var repo = Repository()
         binding.editName.onFocusChangeListener = onFocusChangeListener
         binding.editId.onFocusChangeListener = onFocusChangeListener
 
@@ -38,15 +42,26 @@ class MakeProfileActivity : AppCompatActivity() {
         }
         binding.btnNext.setOnClickListener{
             if(verify()){
+                val userId = binding.editId.text
+                val name = binding.editName.text
+                val userNo = intent.getIntExtra("userNo",0)
+                Log.d("유저번호",userNo.toString())
                 val intent = Intent(applicationContext, RegisterTermActivity::class.java)
-                if (verify()){
-                    Log.d("userNo",userNo.toString())
-                    var userId = binding.editId.text.toString()
-                    var userName = binding.editName.text.toString()
-                    MakeProfileForm().patchMakeProfile(userId,userName,userNo)
-                    intent.putExtra("name",userName)
-                    startActivity(intent)
-                }
+                val profileMake = ProfileMake(
+                    userId.substring(1,userId.lastIndex).trim(),
+                    name.toString().trim()
+                )
+                    repo.makeProfileForm(profileMake,userNo,object : Repository.GetDataCallBack<meuser>{
+                        override fun onSuccess(data: meuser?) {
+                            Log.d("유저정보",data.toString())
+                            Log.d("유저아이디",profileMake.userId)
+                            intent.putExtra("name",profileMake.name)
+                            startActivity(intent)
+                        }
+                        override fun onFailure() {
+                        }
+
+                    })
 
 
             }
