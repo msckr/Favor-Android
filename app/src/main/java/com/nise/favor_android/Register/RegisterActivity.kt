@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.widget.doAfterTextChanged
@@ -63,6 +64,7 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.btnNext.setOnClickListener {
             if(verify()){
+                val intent = Intent(applicationContext, MakeProfileActivity::class.java)
                 val loginRequest = LoginRequest(
                     binding.editEmail.text.toString().trim(),
                     binding.editPassword.text.toString().trim()
@@ -71,7 +73,8 @@ class RegisterActivity : AppCompatActivity() {
                     override fun onSuccess(data: meuser?) {
                         val userNo = data?.data!!.userNo
                         intent.putExtra("userNo",userNo)
-                        startActivity(Intent(applicationContext, MakeProfileActivity::class.java))
+                        Log.d("userNo", userNo.toString())
+                        startActivity(intent)
                         finish()
                     }
                     override fun onFailure(){

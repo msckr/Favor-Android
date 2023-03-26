@@ -10,7 +10,6 @@ class MakeProfileForm {
             userId = userId,
             name = name
         )
-        var userNo = userNo
         repo.makeProfileForm(makeProfileForm, userNo)
     }
 }

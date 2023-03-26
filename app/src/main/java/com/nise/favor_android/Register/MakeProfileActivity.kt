@@ -4,6 +4,7 @@ import Repository
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -19,7 +20,7 @@ class MakeProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMakeProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val userNo = intent.getIntExtra("userNo",1)
+        val userNo = intent.getIntExtra("userNo",0)
         binding.editName.onFocusChangeListener = onFocusChangeListener
         binding.editId.onFocusChangeListener = onFocusChangeListener
 
@@ -37,8 +38,17 @@ class MakeProfileActivity : AppCompatActivity() {
         }
         binding.btnNext.setOnClickListener{
             if(verify()){
-                MakeProfileForm().patchMakeProfile(binding.editId.text.toString(),binding.editName.text.toString(),userNo)
-                startActivity(Intent(applicationContext,RegisterTermActivity::class.java))
+                val intent = Intent(applicationContext, RegisterTermActivity::class.java)
+                if (verify()){
+                    Log.d("userNo",userNo.toString())
+                    var userId = binding.editId.text.toString()
+                    var userName = binding.editName.text.toString()
+                    MakeProfileForm().patchMakeProfile(userId,userName,userNo)
+                    intent.putExtra("name",userName)
+                    startActivity(intent)
+                }
+
+
             }
         }
     }
@@ -62,15 +72,6 @@ class MakeProfileActivity : AppCompatActivity() {
 
     fun onHomeClicked(view: View) = onBackPressedDispatcher.onBackPressed()
 
-    fun onNextButtonClicked(view: View) {
-        val intent = Intent(applicationContext, RegisterTermActivity::class.java)
-        if (verify()){
-            var userId = binding.editId.text.toString()
-            var userName = binding.editName.text.toString()
-
-            intent.putExtra("name",binding.editName.text.toString())
-            startActivity(intent)}
-    }
 
     private fun verify(): Boolean =
         binding.editName.text.isNotBlank() && binding.editId.text.isNotBlank() && binding.editId.length() > 1
