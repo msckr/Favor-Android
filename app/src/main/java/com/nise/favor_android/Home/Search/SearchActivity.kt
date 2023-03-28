@@ -6,10 +6,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import com.nise.favor_android.Login.LoginActivity
 import com.nise.favor_android.R
 import com.nise.favor_android.databinding.ActivitySearchBinding
-import kotlinx.android.synthetic.main.activity_search.*
 
 class SearchActivity : AppCompatActivity() {
     private lateinit var binding : ActivitySearchBinding
@@ -19,7 +17,7 @@ class SearchActivity : AppCompatActivity() {
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
         replaceFragment(KeywordFragment())
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 replaceFragment(SearchViewFragment())
                 return false

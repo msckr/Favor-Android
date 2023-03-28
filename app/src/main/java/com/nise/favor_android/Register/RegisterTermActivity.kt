@@ -8,7 +8,6 @@ import android.widget.CompoundButton
 import com.nise.favor_android.Home.NavActivity
 import com.nise.favor_android.R
 import com.nise.favor_android.databinding.ActivityRegisterTermBinding
-import kotlinx.android.synthetic.main.activity_make_profile.*
 
 class RegisterTermActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterTermBinding

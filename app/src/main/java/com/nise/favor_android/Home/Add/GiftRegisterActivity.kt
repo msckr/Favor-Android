@@ -2,16 +2,16 @@ package com.nise.favor_android.Home.Add
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.coroutines.FlowPreview
-import org.w3c.dom.Text
+import androidx.activity.compose.setContent
+import androidx.compose.material.Text
 
 
 class GiftRegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent{
+        setContent {
             Text("hello")
         }
     }
 }
-@FlowPreview
+

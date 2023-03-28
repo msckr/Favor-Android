@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.nise.favor_android.R
-import kotlinx.android.synthetic.main.cardview_timeline.view.*
 
 class TimelineitemAdapter():RecyclerView.Adapter<TimelineitemAdapter.TimelineitemViewHolder>() {
     var images = intArrayOf(R.drawable.favor_icon,
