@@ -33,7 +33,7 @@
             android:layout_marginRight="6dp"
             app:iconifiedByDefault="false"
             app:queryHint="선물,유저 ID를 검색해보세요"
-            app:searchIcon="@drawable/ic_search"
+            app:searchIcon="@drawable/icon_search"
             android:background="@drawable/background_search"/>
 
     </LinearLayout>

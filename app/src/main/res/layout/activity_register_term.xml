@@ -73,6 +73,7 @@
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
             android:buttonTint="@color/textcolor"
+            android:duplicateParentState="false"
             android:text="  약관 전체동의"
             android:textSize="14sp" />
     </LinearLayout>

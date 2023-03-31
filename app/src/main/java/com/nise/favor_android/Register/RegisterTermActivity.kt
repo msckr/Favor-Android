@@ -20,19 +20,18 @@ class RegisterTermActivity : AppCompatActivity() {
         binding.profileName.setText(data)
         binding.checkTerm1.setOnCheckedChangeListener(onCheckedChangedListener)
         binding.checkTerm2.setOnCheckedChangeListener(onCheckedChangedListener)
-        binding.checkTerm3.setOnCheckedChangeListener(onCheckedChangedListener)
         binding.checkTerms.setOnClickListener {
             val isChecked = binding.checkTerms.isChecked
             binding.checkTerm1.isChecked = isChecked
             binding.checkTerm2.isChecked = isChecked
-            binding.checkTerm3.isChecked = isChecked
+
         }
     }
 
 
     private val onCheckedChangedListener = CompoundButton.OnCheckedChangeListener { _, isChecked ->
         if (!isChecked) binding.checkTerms.isChecked = false
-        if (verify() && binding.checkTerm3.isChecked) binding.checkTerms.isChecked = true
+        if (verify()) binding.checkTerms.isChecked = true
         btnActivation()
     }
 
