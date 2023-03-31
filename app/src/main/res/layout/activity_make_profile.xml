@@ -23,8 +23,8 @@
             android:layout_height="48dp"
             android:contentDescription="@null"
             android:onClick="onHomeClicked"
-            android:scaleType="fitCenter"
-            android:src="@drawable/icon_chevron_left"
+            android:scaleType="center"
+            android:src="@drawable/icon_left"
             app:tint="@color/textcolor" />
 
         <TextView
@@ -58,14 +58,15 @@
             android:contentDescription="@null"
             android:src="@drawable/back_default_profile" />
 
-        <Button
+        <ImageButton
             android:id="@+id/img_profile_edit"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="right|bottom"
             android:contentDescription="@null"
-            android:background="@drawable/back_default_add"
-             />
+            android:background="@drawable/background_box2"
+            android:scaleType="center"
+            android:src="@drawable/icon_add"/>
     </FrameLayout>
 
     <EditText

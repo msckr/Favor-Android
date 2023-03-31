@@ -21,8 +21,8 @@
             android:layout_height="48dp"
             android:contentDescription="@null"
             android:onClick="onHomeClicked"
-            android:scaleType="fitCenter"
-            android:src="@drawable/icon_chevron_left"
+            android:scaleType="center"
+            android:src="@drawable/icon_left"
             app:tint="@color/textcolor" />
 
         <TextView
@@ -41,7 +41,7 @@
             android:contentDescription="@null"
             android:scaleType="fitCenter"
             android:src="@null"
-            app:tint="@color/textcolor" />
+            app:tint="@color/textcolor"/>
     </LinearLayout>
 
     <LinearLayout

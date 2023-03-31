@@ -18,12 +18,12 @@
 
         <ImageView
             android:id="@+id/home"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:contentDescription="@null"
             android:onClick="onHomeClicked"
-            android:scaleType="fitCenter"
-            android:src="@drawable/icon_chevron_left"
+            android:scaleType="center"
+            android:src="@drawable/icon_left"
             app:tint="@color/textcolor" />
 
         <TextView
@@ -126,8 +126,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
                 android:contentDescription="@null"
-                android:scaleType="fitCenter"
-                android:src="@drawable/icon_chevron_right"
+                android:scaleType="fillCenter"
+                android:src="@drawable/icon_right"
                 app:tint="@color/detail" />
         </LinearLayout>
     </LinearLayout>
