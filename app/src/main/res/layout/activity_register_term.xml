@@ -62,7 +62,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="16dp"
         android:orientation="horizontal">
@@ -70,17 +70,22 @@
         <CheckBox
             android:id="@+id/check_terms"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="6dp"
+            android:button="@android:color/transparent"
+            android:background="@drawable/selector_checkbox"
+            android:duplicateParentState="false"/>
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:buttonTint="@color/textcolor"
-            android:duplicateParentState="false"
-            android:text="  약관 전체동의"
-            android:textSize="14sp" />
+            android:text="약관 전체동의"
+            android:gravity="center"
+            android:textSize="14sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="16dp"
         android:orientation="horizontal">
@@ -89,10 +94,16 @@
             android:id="@+id/check_term1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:buttonTint="@color/textcolor"
-            android:text="  페이버 운영약관 동의 (필수)"
-            android:textSize="14sp" />
+            android:layout_marginHorizontal="6dp"
+            android:background="@drawable/selector_checkbox"
+            android:button="@android:color/transparent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="페이버 운영약관 동의 (필수)"
+            android:gravity="center"
+            android:textSize="14sp"/>
 
         <View
             android:layout_width="0dp"
@@ -112,7 +123,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="80dp"
         android:orientation="horizontal">
@@ -120,10 +131,30 @@
         <CheckBox
             android:id="@+id/check_term2"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="6dp"
+            android:button="@android:color/transparent"
+            android:background="@drawable/selector_checkbox"
+            android:checked="true" />
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:buttonTint="@color/textcolor"
-            android:text="  개인정보 수집 및 이용 동의 (필수)"
+            android:text="개인정보 수집 및 이용 동의 (필수)"
+            android:gravity="center"
+            android:textSize="14sp"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="onViewTermClicked"
+            android:tag="1"
+            android:text="보기"
+            android:textColor="@color/box2"
             android:textSize="14sp" />
     </LinearLayout>
 
