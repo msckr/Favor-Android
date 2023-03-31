@@ -28,4 +28,5 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="favor">Favor</string>
     <string name="title_activity_gift_register">GiftRegisterActivity</string>
+    <string name="moreInfo"><u>보기</u></string>
 </resources>

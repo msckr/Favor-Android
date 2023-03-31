@@ -116,9 +116,9 @@
             android:gravity="center"
             android:onClick="onViewTermClicked"
             android:tag="1"
-            android:text="보기"
+            android:text="@string/moreInfo"
             android:textColor="@color/box2"
-            android:textSize="14sp" />
+            android:textSize="14sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -134,8 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="6dp"
             android:button="@android:color/transparent"
-            android:background="@drawable/selector_checkbox"
-            android:checked="true" />
+            android:background="@drawable/selector_checkbox"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -153,7 +152,7 @@
             android:gravity="center"
             android:onClick="onViewTermClicked"
             android:tag="1"
-            android:text="보기"
+            android:text="@string/moreInfo"
             android:textColor="@color/box2"
             android:textSize="14sp" />
     </LinearLayout>
