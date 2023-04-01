@@ -126,7 +126,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
                 android:contentDescription="@null"
-                android:scaleType="fillCenter"
+                android:scaleType="center"
                 android:src="@drawable/icon_right"
                 app:tint="@color/detail" />
         </LinearLayout>

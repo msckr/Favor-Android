@@ -42,8 +42,8 @@
     </LinearLayout>
 
     <com.google.android.material.tabs.TabLayout
+        android:id="@+id/registerTab"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="32dp"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         app:tabTextAppearance="@style/giftregistertab"
@@ -60,6 +60,7 @@
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/register"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="20dp">
