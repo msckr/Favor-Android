@@ -45,6 +45,7 @@
         android:id="@+id/registerTab"
         android:layout_marginLeft="20dp"
         android:layout_width="220dp"
+        android:layout_marginTop="16dp"
         android:layout_height="wrap_content"
         app:tabTextAppearance="@style/giftregistertab"
         app:tabIndicatorColor="@null">
