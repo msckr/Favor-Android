@@ -242,7 +242,9 @@
                     android:paddingBottom="16dp"
                     android:singleLine="true"
                     android:textColorHint="@color/detail"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:inputType="textMultiLine"
+                    android:scrollHorizontally="False"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
