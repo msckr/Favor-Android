@@ -4,6 +4,7 @@ package com.nise.favor_android.Home.Add
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.viewpager2.widget.ViewPager2
@@ -46,5 +47,5 @@ class GiftRegisterActivity : AppCompatActivity() {
             }
         }.attach()
     }
-
+    fun onHomeClicked(view: View) = onBackPressedDispatcher.onBackPressed()
 }
