@@ -16,4 +16,21 @@ interface LoginService {
         @Body profileMake: ProfileMake,
         @Query("userNo") value : Int
     ): Call<meuser>
+
+    @PATCH("users/{userNo}")
+    fun repairUser(
+        @Body userUpdateRequestDto : userUpdateRequestDto,
+        @Path("userNo") userMo : Int
+    ): Call<meuser>
+
+    @GET("users/friend-list/{userNo}")
+    fun friendList(
+        @Path("userNo") userNo: Int
+    ): Call<meuser>
+
+    @GET("users/gift-by-category/{userNo}/{category}")
+    fun giftByCategory(
+        @Path("category") category : String,
+        @Path("userNo") userNo: Int
+    ): Call<meuser>
 }
