@@ -48,7 +48,8 @@
         android:layout_marginTop="16dp"
         android:layout_height="wrap_content"
         app:tabTextAppearance="@style/giftregistertab"
-        app:tabIndicatorColor="@null">
+        app:tabIndicatorColor="@null"
+        app:tabRippleColor="@android:color/transparent">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -64,6 +65,5 @@
         android:id="@+id/register"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </androidx.viewpager2.widget.ViewPager2>
 </LinearLayout>

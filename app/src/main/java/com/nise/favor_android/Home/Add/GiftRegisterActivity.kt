@@ -2,6 +2,8 @@
 
 package com.nise.favor_android.Home.Add
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -17,6 +19,7 @@ import com.nise.favor_android.databinding.ActivityGiftRegisterBinding
 
 class GiftRegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGiftRegisterBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGiftRegisterBinding.inflate(layoutInflater)
@@ -26,14 +29,13 @@ class GiftRegisterActivity : AppCompatActivity() {
     }
     private fun initViewPager() {
         var viewPager2Adatper = RegisterAdapter(this)
-        viewPager2Adatper.addFragment(RecievePrFragment())
         viewPager2Adatper.addFragment(GivePrFragment())
+        viewPager2Adatper.addFragment(RecievePrFragment())
 
         binding.register.apply {
             adapter = viewPager2Adatper
             registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
-
                     super.onPageSelected(position)
                 }
             })
