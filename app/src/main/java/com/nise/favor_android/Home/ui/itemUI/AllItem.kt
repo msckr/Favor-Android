@@ -1,14 +1,14 @@
 package com.nise.favor_android.Home.ui.itemUI
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nise.favor_android.R
 import com.nise.favor_android.databinding.FragmentAllItemBinding
-import com.nise.favor_android.databinding.FragmentHomeBinding
 
 
 class AllItem : Fragment() {
@@ -16,20 +16,32 @@ class AllItem : Fragment() {
 
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentAllItemBinding.inflate(inflater, container, false)
 
-        var adapter = TimelineitemAdapter()
+        val adapter = TimelineitemAdapter()
+
+        adapter.images = arrayListOf(
+            R.drawable.favor_icon,
+            R.drawable.favor_icon,
+            R.drawable.favor_icon,
+            R.drawable.favor_icon
+        )
+
+        val manager = GridLayoutManager(requireContext(), 2)
+
+        binding.timelineImage.layoutManager = manager
+
         binding.timelineImage.adapter = adapter
+
+
         val root: View = binding.root
+
+
 
         return root
     }
@@ -38,5 +50,6 @@ class AllItem : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
+        _binding = null
     }
 }
